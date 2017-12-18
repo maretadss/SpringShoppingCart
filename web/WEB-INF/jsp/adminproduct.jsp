@@ -18,37 +18,64 @@
     </head>
     <body>
         <jsp:include page="head.jsp"/>
-       
-        <!--h1 align="center">PRODUCT</h1>
+       <br/>
+       <br/>
+       <h1 align="center" style="color: red; font-size: large; font-weight: 600">PRODUCT</h1>
+       <br/>
         <form:form action="admin/save" modelAttribute="productBean" method="POST">
-            <table align="center">
+            <div class="center-block" style="width: 400px">
+            <table class="table table-striped">
                 <tr>
                     <td><form:label path="productCode">Kode Produk</form:label></td>
-                    <td><form:input path="productCode"/></td>
+                    <td>:</td>
+                    <td><form:input path="productCode" placeholder="2 Huruf Utama Kategory"/></td>
+                    
                 </tr>
                 <tr>
                     <td><form:label path="productName">Nama Produk</form:label></td>
+                    <td>:</td>
                     <td><form:input path="productName"/></td>
+                    
                 </tr>
                 <tr>
                     <td><form:label path="productPrice">Harga</form:label></td>
-                    <td><form:input path="productPrice"/></td>
+                     <td>:</td>
+                    <td><form:input path="productPrice" height="300"/></td>
+                    
                 </tr>
                 <tr>
                     <td><form:label path="quantity">Stok</form:label></td>
+                     <td>:</td>
                     <td><form:input path="quantity"/></td>
+                    
                 </tr>
                 <tr>
-                    <td></td>
-                    <td align="left"><form:button name="submitButton" value="Submit">Save</form:button> </td>
+                    <td><form:label path="available">Ketersediaan</form:label></td>
+                     <td>:</td>
+                    <td><form:input path="available"/></td>
+                    
                 </tr>
-            </table-->
+                <tr>
+                    <td><form:label path="description">Deskripsi</form:label></td>
+                     <td>:</td>
+                    <td><form:input path="description"/></td>
+                   
+                </tr>
+               
+            </table>
+                    <form:button class="btn btn-primary" name="submitButton" value="Submit">Save</form:button>
+       
+                 </div> 
         </form:form>
+       <div class="center-block">
+           <button class="btn btn-warning">Update</button> 
+       <button class="btn btn-danger">Delete</button>
+       </div>
         <br/>
         <br/>
         <br/>
         <br/>
-         <div style="width: 600px" class="center-block">
+         <div style="width: 900px" class="center-block">
             
          <div style="font-weight: 550; font-size: large; color: red">ALL PRODUCT</div>
         <br/>
@@ -56,21 +83,27 @@
         <table class="table table-striped" width="20" >
             
             <tr>
-                
+                <th>Kode</th>
                 <th> Nama Produk</th>
                 <th> Harga </th>
                 <th> Stok </th>
+                <th> Ketersediaan </th>
+                <th> Deskripsi </th>
                 
             </tr>
         <a:forEach var="p" items="${prods}">
             <tr>
-                <td><a href="${pageContext.request.contextPath}/home/product/${p.productId}">${p.productName}</a> </td>
+                <td>${p.productCode}${productId}</td>
+                <td>${p.productName}</a> </td>
                 <td>${p.productPrice}</td>
+                <td>${p.quantity}</td>
                 <td>${p.available}</td>
+                <td>${p.description}</td>
             </tr>
         </a:forEach>
         </table>
                  </div>
+ 
         <br/>
         <br/>
         <br/>

@@ -36,12 +36,17 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				 <p><span>Butuh Bantuan?</span> Hubungi Kami : <span class="number">maretadss@gmail.com</span></span></p>
 			</div>
 			<div class="account_desc">
-				<ul>
+				<ul>    <c:if test="${empty sessionScope.user}">
 					<li><a href="${pageContext.request.contextPath}/register">Daftar</a></li>
 					<li><a href="${pageContext.request.contextPath}/login">Login</a></li>
-					<li><a href="#">Pesanan</a></li>
-					<li><a href="#">Checkout</a></li>
-					<li><a href="#">My Account</a></li>
+                                        </c:if>
+                                        <c:if test="${not empty sessionScope.user}">
+                                         <li>Hi,${user.username}</li>
+                                        <li><a href="${pageContext.request.contextPath}/logout">Logout</a></li>
+                                        </c:if>
+					<li><a href="${pageContext.request.contextPath}/cart">Pesanan</a></li>
+					<li><a href="${pageContext.request.contextPath}">Checkout</a></li>
+					<li><a href="${pageContext.request.contextPath}">My Account</a></li>
 				</ul>
 			</div>
 			<div class="clear"></div>
@@ -51,9 +56,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         <a href="${pageContext.request.contextPath}"><img src="${pageContext.request.contextPath}/resources/images/logo1.png"/></a>
 			</div>
 			  <div class="cart">
-			  	   <p>Welcome to our Online Store! <img src="${pageContext.request.contextPath}/resources/images/ic.png"/><div id="dd" class="wrapper-dropdown-2"> ${interator} item(s) - Rp. 0.00
+			  	   <p>Welcome to our Online Store! <img src="${pageContext.request.contextPath}/resources/images/ic.png"/><div id="dd" class="wrapper-dropdown-2"> ${interator} item(s) - Rp. ${totalbayar}
 			  	   	<ul class="dropdown">
-							<li>you have no items in your Shopping cart</li>
+                                             <li><a href="${pageContext.request.contextPath}/cart"> you have ${interator} items in your Shopping cart</a></li>
 					</ul></div></p>
 			  </div>
 			  <script type="text/javascript">
@@ -90,10 +95,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	     	<div class="menu">
 	     		<ul>
 			    	<li class="active"><a href="${pageContext.request.contextPath}">Home</a></li>
-			    	<li><a href="#">About</a></li>
-			    	<li><a href="#">Delivery</a></li>
-			    	<li><a href="#">News</a></li>
-			    	<li><a href="#">Contact</a></li>
+			    	<li><a href="${pageContext.request.contextPath}/error">About</a></li>
+			    	<li><a href="${pageContext.request.contextPath}/error">Delivery</a></li>
+			    	<li><a href="${pageContext.request.contextPath}/error">News</a></li>
+			    	<li><a href="${pageContext.request.contextPath}/error">Contact</a></li>
 			    	<div class="clear"></div>
      			</ul>
 	     	</div>
@@ -177,78 +182,85 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		      </div>
 		   <div class="clear"></div>
 		</div>
-   </div>
+   </div>                                                                  
  <div class="main">
+     
     <div class="content">
     	<div class="content_top">
     		<div class="heading">
+                    
     		<h3>Mobile Phones</h3>
     		</div>
     		<div class="see">
     			<p><a href="home/product">See all Products</a></p>
     		</div>
+            
     		<div class="clear"></div>
-    	</div>
-        
+        </div>
+         
 	      <div class="section group">
 				<div class="grid_1_of_4 images_1_of_4">
                                     
 					 <a href="${pageContext.request.contextPath}/home/product/103"><img src="${pageContext.request.contextPath}/resources/images/xia1.PNG" alt="" /></a>
-					 
+					
                                          <h2>Xiaomi Redmi Note 4</h2>
 					<div class="price-details">
 				       <div class="price-number">
 							<p><span class="rupees">RP 1.999.000</span></p>
 					    </div>
 					       		<div class="add-cart">								
-									<h4><a href="${pageContext.request.contextPath}/home/product/103">Beli</a></h4>
+									<h4><a href="${pageContext.request.contextPath}/home/product/${p.productId}">Beli</a></h4>
 							     </div>
 							 <div class="clear"></div>
                                       
 					</div>
+                                                                  
                                         
 					 
 				</div>
+              
 				<div class="grid_1_of_4 images_1_of_4">
-					<a href="${pageContext.request.contextPath}/home/product/104"><img src="${pageContext.request.contextPath}/resources/images/xia2.PNG" alt="" /></a>
+					<a href="${pageContext.request.contextPath}/home/product/${p.productId}"><img src="${pageContext.request.contextPath}/resources/images/xia2.PNG" alt="" /></a>
 					 <h2>Xiaomi Mi A1 64GB</h2>
 					<div class="price-details">
 				       <div class="price-number">
 							<p><span class="rupees">RP 3.099.000</span></p>
 					    </div>
 					       		<div class="add-cart">								
-									<h4><a href="${pageContext.request.contextPath}/home/product/104">Beli</a></h4>
+									<h4><a href="${pageContext.request.contextPath}/home/product/${p.productId}">Beli</a></h4>
 							     </div>
 							 <div class="clear"></div>
 					</div>
 				    
-				</div>
+				</div>                                                                  
+
 				<div class="grid_1_of_4 images_1_of_4">
-					<a href="${pageContext.request.contextPath}/home/product/105"><img src="${pageContext.request.contextPath}/resources/images/viv1.PNG" alt="" /></a>
+					<a href="${pageContext.request.contextPath}/home/product/${p.productId}"><img src="${pageContext.request.contextPath}/resources/images/viv1.PNG" alt="" /></a>
 					 <h2>Vivo V7 - RAM 4 GB</h2>
 					 <div class="price-details">
 				       <div class="price-number">
 							<p><span class="rupees">RP 3.599.000</span></p>
 					    </div>
 					       		<div class="add-cart">								
-									<h4><a href="${pageContext.request.contextPath}/home/product/105">Beli</a></h4>
+									<h4><a href="${pageContext.request.contextPath}/home/product/${p.productId}">Beli</a></h4>
 							     </div>
 							 <div class="clear"></div>
 					</div>
 				</div>
 				<div class="grid_1_of_4 images_1_of_4">
-					<a href="${pageContext.request.contextPath}/home/product/106"><img src="${pageContext.request.contextPath}/resources/images/son1.PNG" alt="" /></a>
+					<a href="${pageContext.request.contextPath}/home/product/${p.productId}"><img src="${pageContext.request.contextPath}/resources/images/son1.PNG" alt="" /></a>
 					 <h2>SON Xperia XA1-32GB</h2>
 					<div class="price-details">
 				       <div class="price-number">
 							<p><span class="rupees">RP 3.400.000</span></p>
 					    </div>
 					       		<div class="add-cart">								
-									<h4><a href="${pageContext.request.contextPath}/home/product/106">Beli</a></h4>
+									<h4><a href="${pageContext.request.contextPath}/home/product/${p.productId}">Beli</a></h4>
 							     </div>
 							 <div class="clear"></div>
 					</div>				     
 				</div>
+                                                             
 			</div>
 			<div class="content_bottom">
     		<div class="heading">
@@ -261,64 +273,66 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     	</div>
 			<div class="section group">
 				<div class="grid_1_of_4 images_1_of_4">
-					 <a href="${pageContext.request.contextPath}/home/product/107"><img src="${pageContext.request.contextPath}/resources/images/asus1.PNG" alt="" /></a>					
+					 <a href="${pageContext.request.contextPath}/home/product/${p.productId}"><img src="${pageContext.request.contextPath}/resources/images/asus1.PNG" alt="" /></a>					
 					 <h2>ASUS X555BP-BX921T</h2>
 					<div class="price-details">
 				       <div class="price-number">
 							<p><span class="rupees">RP 5.325.000</span></p>
 					    </div>
 					       		<div class="add-cart">								
-									<h4><a href="${pageContext.request.contextPath}/home/product/107">Beli</a></h4>
+									<h4><a href="${pageContext.request.contextPath}/home/product/${p.productId}">Beli</a></h4>
 							     </div>
 							 <div class="clear"></div>
 					</div>
 				</div>
 				<div class="grid_1_of_4 images_1_of_4">
-					<a href="${pageContext.request.contextPath}/home/product/108"><img src="${pageContext.request.contextPath}/resources/images/len1.PNG" alt="" /></a>
+					<a href="${pageContext.request.contextPath}/home/product/${p.productId}"><img src="${pageContext.request.contextPath}/resources/images/len1.PNG" alt="" /></a>
 					 <h2>Lenovo IdeaPad 120S</h2>
 					 <div class="price-details">
 				       <div class="price-number">
 							<p><span class="rupees">RP 2.899.000</span></p>
 					    </div>
 					       		<div class="add-cart">								
-									<h4><a href="${pageContext.request.contextPath}/home/product/108">Beli</a></h4>
+									<h4><a href="${pageContext.request.contextPath}/home/product/${p.productId}">Beli</a></h4>
 							     </div>
 							 <div class="clear"></div>
 					</div>
 				</div>
 				<div class="grid_1_of_4 images_1_of_4">
-					<a href="${pageContext.request.contextPath}/home/product/109"><img src="${pageContext.request.contextPath}/resources/images/kuklkas1.PNG" alt="" /></a>
+					<a href="${pageContext.request.contextPath}/home/product/${p.productId}"><img src="${pageContext.request.contextPath}/resources/images/kuklkas1.PNG" alt="" /></a>
 					 <h2>Samsung Kulkas 2 Pintu</h2>
 					<div class="price-details">
 				       <div class="price-number">
 							<p><span class="rupees">RP 3.499.000</span></p>
 					    </div>
 					       		<div class="add-cart">								
-									<h4><a href="${pageContext.request.contextPath}/home/product/109">Beli</a></h4>
+									<h4><a href="${pageContext.request.contextPath}/home/product/${p.productId}">Beli</a></h4>
 							     </div>
 							 <div class="clear"></div>
 					</div>
 				</div>
 				<div class="grid_1_of_4 images_1_of_4">
-				 <a href="${pageContext.request.contextPath}/home/product/110"><img src="${pageContext.request.contextPath}/resources/images/kamera1.PNG" alt="" /></a>
+				 <a href="${pageContext.request.contextPath}/home/product/${p.productId}"><img src="${pageContext.request.contextPath}/resources/images/kamera1.PNG" alt="" /></a>
 					 <h2>Sony Alpha a5100</h2>					 
 					 <div class="price-details">
 				       <div class="price-number">
 							<p><span class="rupees">RP 6.999.000</span></p>
 					    </div>
 					       		<div class="add-cart">								
-									<h4><a href="${pageContext.request.contextPath}/home/product/110">Beli</a></h4>
+									<h4><a href="${pageContext.request.contextPath}/home/product/${p.productId}">Beli</a></h4>
 							     </div>
 							 <div class="clear"></div>
 					</div>
-				</div>
-			</div>
-                                        
+				</div>  
+                                          
     </div>
- </div>
-                                         
+                                                          
+    </div>
+                                                             
+                                                           
+ </div>                                   
 </div>
-                                         
+                                    
    <div class="footer">
    	  <div class="wrap">	
 	     <div class="section group">

@@ -15,6 +15,8 @@ public class ProductFormBean {
     private String productName;
     private int quantity;
     private double productPrice;
+    private String available;
+    private String description;
 
     /**
      * @return the productCode
@@ -70,6 +72,34 @@ public class ProductFormBean {
      */
     public void setProductPrice(double productPrice) {
         this.productPrice = productPrice;
+    }
+
+    /**
+     * @return the available
+     */
+    public String getAvailable() {
+        return available;
+    }
+
+    /**
+     * @param available the available to set
+     */
+    public void setAvailable(String available) {
+        this.available = available;
+    }
+
+    /**
+     * @return the description
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    /**
+     * @param description the description to set
+     */
+    public void setDescription(String description) {
+        this.description = description;
     }
 
 }

@@ -16,21 +16,20 @@
          <script src="<c:url value="/resources/theme1/js/jquery-3.2.1.min.js" />"></script>
         <script src="<c:url value="/resources/theme1/js/bootstrap.js" />"></script>
         <script src="<c:url value="/resources/theme1/js/login.js" />"></script>
-        <title>JSP Page</title>
+        <title>WoWMart | Situs Belanja Online Termumet di Indonesia</title>
     </head>
     <body>
-        <b>${errMsg}</b>
-           
-                    
+  
                 <div class="login-page">
                  <div class="form">
                     <form:form class="login-form" action="${pageContext.request.contextPath}/login/check" modelAttribute="loginBean" method="POST" >
-                            
+                        <div style="color: red; font-weight: 300">${errMsg}</div>
                                 <form:input path="username" placeholder="username"/>
                             
                                 <form:password path="password" placeholder="password"/>
                             <form:button name="submitButton" value="Submit">login</button></form:button>
-                        <p class="message">Not registered? <a href="${pageContext.request.contextPath}/register">Create an account</a></p>
+                 
+                        <p class="message">Not registered? <a href="${pageContext.request.contextPath}/register">Create an Account</a></p>
                                  
                     </form:form>
                       </div>

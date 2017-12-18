@@ -11,9 +11,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        
         <link href="<c:url value="/resources/theme1/css/style.css"/>" rel="stylesheet" type="text/css" media="all">
-        
         <link href="<c:url value="/resources/theme1/css/slider.css"/>" rel="stylesheet" type="text/css" media="all">
         <link href="<c:url value="/resources/css/bootstrap.css" />" rel="stylesheet">
         <script src="<c:url value="/resources/theme1/js/jquery-1.7.2.min.js"/>" type="text/javascript"</script> 
@@ -24,38 +22,53 @@
     </head>
     <body>
         <jsp:include page="head.jsp"/>
-        <div style="width: 400px;" class="center-block">
-        <h1 style="color: red">PRODUCT DETAIL</h1>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+        <div style="width: 400px" class="center-block">
+        <div style="font-weight: 550; font-size: large; color: red">PRODUCT DETAIL</div>
+        <br/>
             <table class="table table-striped">
             <tr>
+            <!--td rowspan="5"> <img src="${pageContext.request.contextPath}/resources/images/xia1.PNG" width="500" height="200"/></td-->
                 <td>Kode</td>
                 <td>:</td>
                 <td>${product.productCode} ${product.productId}</td>
             </tr>
             <tr>
+                
                 <td>Nama Produk</td>
                 <td>:</td>
                 <td>${product.productName}</td>
             </tr>
             <tr>
+                
                 <td>Harga</td>
                 <td> : </td>
                 <td>Rp. ${product.productPrice}</td>
             </tr>
             <tr>
+            
                 <td>Stok</td>
                 <td>:</td>
                 <td>${product.available}</td>
             </tr>
             <tr>
+                
                 <td>Deskripsi</td>
                 <td>:</td>
                 <td>${product.description}</td>
             </tr>
         </table>
-                <a href="addCart/${product.productId}"<button class ="btn btn-danger" style="align-content: center"> BELI SEKARANG</button></a>
-                </div>
- 				
+               <a href="addCart/${product.productId}"><button class ="btn btn-danger" style="align-content: center"> BELI SEKARANG</button></a>
+        </div>
+ 	<br/>
+        <br/>
+        <br/>
+        <br/>
+    
+		
             <jsp:include page="Footer.jsp"/>
     </body>
 </html>

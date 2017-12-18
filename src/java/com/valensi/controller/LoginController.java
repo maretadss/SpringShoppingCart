@@ -38,12 +38,12 @@ public class LoginController {
     public String checkLogin(HttpSession session, @ModelAttribute("loginBean") LoginBean loginBean, Model model) {
         User user = us.findByUsername(loginBean.getUsername());
         if(user.getUsername()==null) {
-            model.addAttribute("errMsg", "Username salah");
+            model.addAttribute("errMsg", "Username Salah");
             return "login";
         }
         String encryptedPassword = PasswordDigest.createEncryptedPassword(loginBean.getPassword());
         if(!encryptedPassword.equals(user.getPassword())) {
-            model.addAttribute("errMsg", "Password salah");
+            model.addAttribute("errMsg", "Password Salah");
             return "login";
         }
         

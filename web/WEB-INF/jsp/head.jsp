@@ -27,12 +27,17 @@
 				 <p><span>Butuh Bantuan?</span> Hubungi Kami : <span class="number">maretadss@gmail.com</span></span></p>
 			</div>
 			<div class="account_desc">
-				<ul>
+				<ul>    <c:if test="${empty sessionScope.user}">
 					<li><a href="${pageContext.request.contextPath}/register">Daftar</a></li>
 					<li><a href="${pageContext.request.contextPath}/login">Login</a></li>
-					<li><a href="#">Pesanan</a></li>
-					<li><a href="#">Checkout</a></li>
-					<li><a href="#">My Account</a></li>
+                                        </c:if>
+                                        <c:if test="${not empty sessionScope.user}">
+                                        <li>Hi,${user.username}</li>
+                                        <li><a href="${pageContext.request.contextPath}/logout">Logout</a></li>
+                                        </c:if>
+					<li><a href="${pageContext.request.contextPath}/cart">Pesanan</a></li>
+					<li><a href="${pageContext.request.contextPath}">Checkout</a></li>
+					<li><a href="${pageContext.request.contextPath}">My Account</a></li>
 				</ul>
 			</div>
 			<div class="clear"></div>
@@ -42,9 +47,9 @@
                         <a href="${pageContext.request.contextPath}"><img src="${pageContext.request.contextPath}/resources/images/logo1.png"/></a>
 			</div>
 			  <div class="cart">
-                          <p>Welcome to our Online Store! <img src="${pageContext.request.contextPath}/resources/images/ic.png"/><div id="dd" class="wrapper-dropdown-2"> ${interator} item(s) - Rp. 0.00
+                          <p>Welcome to our Online Store! <img src="${pageContext.request.contextPath}/resources/images/ic.png"/><div id="dd" class="wrapper-dropdown-2"> ${interator} item(s) - Rp. ${totalbayar}
 			  	   	<ul class="dropdown">
-							<li>you have no items in your Shopping cart</li>
+                                        <li><a href="${pageContext.request.contextPath}/cart">you have ${interator} items in your Shopping cart</a></li>
 					</ul></div></p>
 			  </div>
 			  <script type="text/javascript">
@@ -81,10 +86,10 @@
 	     	<div class="menu">
 	     		<ul>
 			    	<li class="active"><a href="${pageContext.request.contextPath}">Home</a></li>
-			    	<li><a href="#">About</a></li>
-			    	<li><a href="#">Delivery</a></li>
-			    	<li><a href="#">News</a></li>
-			    	<li><a href="#">Contact</a></li>
+			    	<li><a href="${pageContext.request.contextPath}">About</a></li>
+			    	<li><a href="${pageContext.request.contextPath}">Delivery</a></li>
+			    	<li><a href="${pageContext.request.contextPath}">News</a></li>
+			    	<li><a href="${pageContext.request.contextPath}">Contact</a></li>
 			    	<div class="clear"></div>
      			</ul>
 	     	</div>
@@ -94,6 +99,7 @@
 	     		</form>
 	     	</div>
 	     	<div class="clear"></div>
+                
 	     </div>
            </div>
         </div>
