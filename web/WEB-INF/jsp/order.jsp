@@ -15,7 +15,9 @@
         <link href="<c:url value="/resources/theme1/css/style.css"/>" rel="stylesheet" type="text/css" media="all">
         <link href="<c:url value="/resources/theme1/css/slider.css"/>" rel="stylesheet" type="text/css" media="all">
         <link href="<c:url value="/resources/css/bootstrap.css" />" rel="stylesheet">
+        <script src="<c:url value="/resources/theme1/js/jquery-3.2.1.min.js"/>" type="text/javascript"</script> 
         <script src="<c:url value="/resources/theme1/js/jquery-1.7.2.min.js"/>" type="text/javascript"</script> 
+        <script src="<c:url value="/resources/theme1/js/bootstrap.min.js"/>" type="text/javascript"</script> 
         <script src="<c:url value="/resources/theme1/js/move-top.js"/>" type="text/javascript"</script>
         <script src="<c:url value="/resources/theme1/js/startstop-slider.js"/>" type="text/javascript"</script>
         <script src="<c:url value="/resources/theme1/js/easing.js"/>" type="text/javascript"</script>
@@ -114,8 +116,25 @@
             
             <div class="form-group"> 
               <div class="col-sm-offset-2 col-sm-10">
-              <button type="submit" class="btn btn-warning" onclick="alert('Terimakasih sudah berbelanja di WoWMart.co.id\nData Anda sedang di proses')">Lanjutkan</button>
-            </div>
+              <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal">Lanjutkan</button>
+            <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-ms">
+      <div class="modal-content">
+        
+        <div class="modal-body">
+          <p>Terimaksih sudah berbelanja di WowMart.co.id</p>
+          <p>Pesanan Anda sedang diproses.</p>
+          <p>Selamat Berbelanja kembali</p>
+    
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Oke</button>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+    </div>
             </div>
             </form>
         </c:if>

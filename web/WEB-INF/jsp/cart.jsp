@@ -56,6 +56,7 @@
                 <c:if test="${empty sessionScope.cart}">
                     <button class="btn btn-warning disabled" onclick="alert('Keranjang Belanja Anda Kosong\nBelanja Yuk')"> Lanjutkan Pembayaran</button></a>
                 </c:if>
+
              <c:if test="${not empty sessionScope.cart}">
              <a href="${pageContext.request.contextPath}/bayar"><button class="btn btn-warning"> Lanjutkan Pembayaran</button></a>
                </c:if>
