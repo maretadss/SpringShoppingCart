@@ -8,10 +8,10 @@ package com.valensi.controller;
 import com.valensi.dao.ProductService;
 import com.valensi.model.Cart;
 import com.valensi.model.Product;
+import java.util.Map;
 import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -45,12 +45,15 @@ public class CartController {
     public String deleteCart(HttpSession session, @PathVariable Integer productId) {
         int interator;
         Product prod = ps.findById(productId);
-
-        Cart cart = (Cart) session.getAttribute("cart");
-        if (cart != null) {
+        Cart cart = new Cart();
+        cart = (Cart) session.getAttribute("cart");
+        Map<Integer, Product> list = cart.getCartItems();
+        for (Map.Entry<Integer, Product> entry : list.entrySet()) {
+            Integer key = entry.getKey();
+            Product value = entry.getValue();
+            cart.getCartItems().remove(key, value);
+            break;
         }
-        del++;
-        cart.getCartItems().remove(del, prod);
         interator = cart.getCartItems().size();
         total = 0.0;
         for (Product p : cart.getCartItems().values()) {
@@ -60,6 +63,5 @@ public class CartController {
         session.setAttribute("interator", interator);
         session.setAttribute("cart", cart);
         return "redirect:/cart";
-
     }
 }

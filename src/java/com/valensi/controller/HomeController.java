@@ -80,6 +80,7 @@ public class HomeController {
       session.setAttribute("total", total);
       session.setAttribute("interator", interator);
       session.setAttribute("cart", cart);
+      session.setAttribute("key", add);
       return "redirect:/home";
       
     }
