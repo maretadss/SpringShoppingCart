@@ -114,7 +114,7 @@
             
             <div class="form-group"> 
               <div class="col-sm-offset-2 col-sm-10">
-              <button type="submit" class="btn btn-warning disabled" onclick="alert('Maaf! Website masih dalam masa pengembangan')">Lanjutkan</button>
+              <button type="submit" class="btn btn-warning" onclick="alert('Terimakasih sudah berbelanja di WoWMart.co.id\nData Anda sedang di proses')">Lanjutkan</button>
             </div>
             </div>
             </form>
