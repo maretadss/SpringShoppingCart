@@ -20,31 +20,6 @@
     <body>
         <jsp:include page="head.jsp"/>
        
-        <!--h1 align="center">PRODUCT</h1>
-        <form:form action="admin/save" modelAttribute="productBean" method="POST">
-            <table align="center">
-                <tr>
-                    <td><form:label path="productCode">Kode Produk</form:label></td>
-                    <td><form:input path="productCode"/></td>
-                </tr>
-                <tr>
-                    <td><form:label path="productName">Nama Produk</form:label></td>
-                    <td><form:input path="productName"/></td>
-                </tr>
-                <tr>
-                    <td><form:label path="productPrice">Harga</form:label></td>
-                    <td><form:input path="productPrice"/></td>
-                </tr>
-                <tr>
-                    <td><form:label path="quantity">Stok</form:label></td>
-                    <td><form:input path="quantity"/></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td align="left"><form:button name="submitButton" value="Submit">Save</form:button> </td>
-                </tr>
-            </table-->
-        </form:form>
         <br/>
         <br/>
         <br/>
