@@ -36,10 +36,10 @@
                                         <li><a href="${pageContext.request.contextPath}/logout">Logout</a></li>
                                         </c:if>
 					<li><a href="${pageContext.request.contextPath}/cart">Pesanan</a></li>
-                                        <c:if test="${empty cart}">
-					<li><a href="${pageContext.request.contextPath}" onclick="alert('Isi Dulu Kerjang Belanja Anda')">Checkout</a></li>
+                                        <c:if test="${empty sessionScope.cart}">
+					<li><a href="${pageContext.request.contextPath}" onclick="alert('Isi Dulu Keranjang Belanja Anda')">Checkout</a></li>
                                         </c:if> 
-                                        <c:if test="${not empty cart}">
+                                        <c:if test="${not empty sessionScope.cart}">
                                         <li><a href="${pageContext.request.contextPath}/bayar">Checkout</a></li>
                                         </c:if>
 					<li><a href="${pageContext.request.contextPath}">My Account</a></li>

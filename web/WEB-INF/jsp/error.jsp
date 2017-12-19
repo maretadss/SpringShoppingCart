@@ -1,6 +1,6 @@
 <%-- 
     Document   : error
-    Created on : Dec 18, 2017, 3:05:32 PM
+    Created on : Dec 19, 2017, 1:26:47 PM
     Author     : user
 --%>
 
@@ -18,31 +18,18 @@
         <script src="<c:url value="/resources/theme1/js/move-top.js"/>" type="text/javascript"</script>
         <script src="<c:url value="/resources/theme1/js/startstop-slider.js"/>" type="text/javascript"</script>
         <script src="<c:url value="/resources/theme1/js/easing.js"/>" type="text/javascript"</script>
-        <title>OPS.. 404 | WoWMart.co.id. </title>
     </head>
     <body>
-    <jsp:include page="head.jsp"/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <div style="width: 300px" class="center-block">
-    <div style="font-weight: 1000; font-size: xx-large"> Ooops... 404!</div>
-    <br/>
-    <br/>
-            <div style="font-weight: 400">Sorry :( Maintenance</div>
-    </div>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
+        <jsp:include page="head.jsp"/>
+         <br/>
         <br/>
         <br/>
+        <div class="center-block" style="width: 700px; align-content: center">       
+        <img src="${pageContext.request.contextPath}/resources/images/error.png"/>
+        </div>
+                 
         <br/>
         <br/>
-    <br/>
-    <jsp:include page="Footer.jsp"/>
+         <jsp:include page="Footer.jsp"/>
     </body>
 </html>

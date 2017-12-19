@@ -53,10 +53,10 @@
              <div style="font-weight: 900; font-size: larger"> Total Bayar : Rp. ${total}</div>
              <br/>
              <br/>
-                <c:if test="${empty cart}">
-                    <button class="btn btn-warning disabled" onclick="alert('Keranjang Belanja Anda Kosong')"> Lanjutkan Pembayaran</button></a>
+                <c:if test="${empty sessionScope.cart}">
+                    <button class="btn btn-warning disabled" onclick="alert('Keranjang Belanja Anda Kosong\nBelanja Yuk')"> Lanjutkan Pembayaran</button></a>
                 </c:if>
-             <c:if test="${not empty cart}">
+             <c:if test="${not empty sessionScope.cart}">
              <a href="${pageContext.request.contextPath}/bayar"><button class="btn btn-warning"> Lanjutkan Pembayaran</button></a>
                </c:if>
             </div>    
