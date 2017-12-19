@@ -36,7 +36,12 @@
                                         <li><a href="${pageContext.request.contextPath}/logout">Logout</a></li>
                                         </c:if>
 					<li><a href="${pageContext.request.contextPath}/cart">Pesanan</a></li>
-					<li><a href="${pageContext.request.contextPath}">Checkout</a></li>
+                                        <c:if test="${empty cart}">
+					<li><a href="${pageContext.request.contextPath}" onclick="alert('Isi Dulu Kerjang Belanja Anda')">Checkout</a></li>
+                                        </c:if> 
+                                        <c:if test="${not empty cart}">
+                                        <li><a href="${pageContext.request.contextPath}/bayar">Checkout</a></li>
+                                        </c:if>
 					<li><a href="${pageContext.request.contextPath}">My Account</a></li>
 				</ul>
 			</div>

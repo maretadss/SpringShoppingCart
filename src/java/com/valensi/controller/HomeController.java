@@ -25,7 +25,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/home")
 public class HomeController {
 
-    int pertambahan;
+    int add;
     double total;
     
     @Autowired
@@ -70,15 +70,14 @@ public class HomeController {
           cart = new Cart();
       
       }
-      pertambahan++;
-      cart.getCartItems().put(pertambahan, prod);
+      add++;
+      cart.getCartItems().put(add, prod);
       interator = cart.getCartItems().size();
       total = 0.0;
       for (Product p : cart.getCartItems().values()) {
           total +=p.getProductPrice();
         }
       session.setAttribute("total", total);
-
       session.setAttribute("interator", interator);
       session.setAttribute("cart", cart);
       return "redirect:/home";

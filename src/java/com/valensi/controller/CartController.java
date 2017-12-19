@@ -47,9 +47,7 @@ public class CartController {
         Product prod = ps.findById(productId);
 
         Cart cart = (Cart) session.getAttribute("cart");
-        if (cart == null) {
-            cart = new Cart();
-
+        if (cart != null) {
         }
         del++;
         cart.getCartItems().remove(del, prod);

@@ -16,7 +16,7 @@
         <script src="<c:url value="/resources/theme1/js/login.js" />" type="text/javascript"></script>
          
         
-        <title>JSP Page</title>
+        <title>Register | WoWMart.co.id</title>
     </head>
     <body>
         

@@ -30,7 +30,7 @@
             <a href="${pageContext.request.contextPath}"><< Lanjutkan Belanja</a>
             <br/>
             <br/>
-        <table class="table table-striped" width="20" >
+        <table class="table table-bordered" width="20" >
             
             <tr>
             <th style="font-weight: 600"> Kode </th>
@@ -53,8 +53,13 @@
              <div style="font-weight: 900; font-size: larger"> Total Bayar : Rp. ${total}</div>
              <br/>
              <br/>
-             <button class="btn btn-warning"> Lanjutkan Pembayaran</button>
-                 </div>
+                <c:if test="${empty cart}">
+                    <button class="btn btn-warning disabled" onclick="alert('Keranjang Belanja Anda Kosong')"> Lanjutkan Pembayaran</button></a>
+                </c:if>
+             <c:if test="${not empty cart}">
+             <a href="${pageContext.request.contextPath}/bayar"><button class="btn btn-warning"> Lanjutkan Pembayaran</button></a>
+               </c:if>
+            </div>    
                  
         <br/>
         <br/>
