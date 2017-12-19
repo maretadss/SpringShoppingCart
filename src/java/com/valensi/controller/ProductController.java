@@ -26,7 +26,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/admin")
 public class ProductController {
 
-    int pertambahan;
+    private int pertambahan;
+    private double item;
 
     @Autowired
     ProductService ps;
@@ -76,10 +77,18 @@ public class ProductController {
             cart = new Cart();
 
         }
-        pertambahan++;
+        
+        
+      
         cart.getCartItems().put(pertambahan, prod);
         interator = cart.getCartItems().size();
-
+         
+        
+        for (Product p : cart.getCartItems().values()) {
+          item +=p.getProductPrice();
+        }
+        
+        session.setAttribute("item", item);
         session.setAttribute("interator", interator);
         session.setAttribute("cart", cart);
         return "redirect:/admin";

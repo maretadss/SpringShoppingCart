@@ -46,11 +46,11 @@
                 <td>${i.productName}</td>
                 <td>${i.productPrice}</td>
                 <td>${i.description}</td>
-                <td><a href="cart/remove/${i.productId}"><button class="btn btn-danger">Delete</button></a></td>
+                <td><a href="${pageContext.request.contextPath}/cart/remove/${i.productId}"><button class="btn btn-danger">Delete</button></a></td>
             </tr>
         </c:forEach>
              </table>
-             <div style="font-weight: 900; font-size: larger"> Total Bayar : Rp. 0.00</div>
+             <div style="font-weight: 900; font-size: larger"> Total Bayar : Rp. ${total}</div>
              <br/>
              <br/>
              <button class="btn btn-warning"> Lanjutkan Pembayaran</button>

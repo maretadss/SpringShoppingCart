@@ -26,6 +26,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HomeController {
 
     int pertambahan;
+    double total;
     
     @Autowired
     ProductService ps;
@@ -72,6 +73,11 @@ public class HomeController {
       pertambahan++;
       cart.getCartItems().put(pertambahan, prod);
       interator = cart.getCartItems().size();
+      total = 0.0;
+      for (Product p : cart.getCartItems().values()) {
+          total +=p.getProductPrice();
+        }
+      session.setAttribute("total", total);
 
       session.setAttribute("interator", interator);
       session.setAttribute("cart", cart);

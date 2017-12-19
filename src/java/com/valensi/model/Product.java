@@ -34,6 +34,7 @@ import javax.persistence.Table;
 })
 public class Product implements Serializable {
 
+   
     
 
     private static final long serialVersionUID = 1L;
@@ -56,6 +57,9 @@ public class Product implements Serializable {
     private String description;
     @Column(name = "AVAILABLE")
     private String available;
+     @Column(name = "PIC")
+    private String pic;
+
 
     public Product() {
     }
@@ -170,6 +174,14 @@ public class Product implements Serializable {
 
     public void setAvailable(String available) {
         this.available = available;
+    }
+
+    public String getPic() {
+        return pic;
+    }
+
+    public void setPic(String pic) {
+        this.pic = pic;
     }
     
 }

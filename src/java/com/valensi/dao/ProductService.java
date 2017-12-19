@@ -62,6 +62,7 @@ public class ProductService {
     }
 
     public Product findById(Integer productId) {
+        em = emf.createEntityManager();
         return em.find(Product.class, productId);
     }
         

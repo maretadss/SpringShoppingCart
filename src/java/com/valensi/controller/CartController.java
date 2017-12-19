@@ -22,40 +22,46 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/cart")
 public class CartController {
-    
+
     int del;
-    
+    double total;
+
     @Autowired
     ProductService ps;
-    
+
     @RequestMapping()
-    public String showListCart(){
-        
-    return "cart";
-    } 
-    
+    public String showListCart() {
+
+        return "cart";
+    }
+
 //    @RequestMapping(value = "/{productId}")
 //    public String showOneProduct(@PathVariable Integer productId, Model model) {
 //        Product prod = ps.findById(productId);
 //        model.addAttribute("cart", prod);
 //        return "productdetail"; //Harus sama dengan nama jsp
 //    }
-    
-    @RequestMapping(value="/cart/remove/{productId}")
-    public String deleteCart(HttpSession session, @PathVariable Integer productId, Model model){
-
+    @RequestMapping(value = "/remove/{productId}")
+    public String deleteCart(HttpSession session, @PathVariable Integer productId) {
+        int interator;
         Product prod = ps.findById(productId);
-        
+
         Cart cart = (Cart) session.getAttribute("cart");
-        if(cart == null){
-           cart = new Cart();
-        
+        if (cart == null) {
+            cart = new Cart();
+
         }
-        del--;
+        del++;
         cart.getCartItems().remove(del, prod);
-        
+        interator = cart.getCartItems().size();
+        total = 0.0;
+        for (Product p : cart.getCartItems().values()) {
+            total += p.getProductPrice();
+        }
+        session.setAttribute("total", total);
+        session.setAttribute("interator", interator);
         session.setAttribute("cart", cart);
         return "redirect:/cart";
-        
+
     }
 }

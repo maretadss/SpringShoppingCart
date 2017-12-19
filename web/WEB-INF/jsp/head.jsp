@@ -47,9 +47,9 @@
                         <a href="${pageContext.request.contextPath}"><img src="${pageContext.request.contextPath}/resources/images/logo1.png"/></a>
 			</div>
 			  <div class="cart">
-                          <p>Welcome to our Online Store! <img src="${pageContext.request.contextPath}/resources/images/ic.png"/><div id="dd" class="wrapper-dropdown-2"> ${interator} item(s) - Rp. ${totalbayar}
+                          <p>Welcome to our Online Store! <img src="${pageContext.request.contextPath}/resources/images/ic.png"/><div id="dd" class="wrapper-dropdown-2"> ${interator} item(s) - Rp. ${total}
 			  	   	<ul class="dropdown">
-                                        <li><a href="${pageContext.request.contextPath}/cart">you have ${interator} items in your Shopping cart</a></li>
+                                        <a href="${pageContext.request.contextPath}/cart"><li>you have ${interator} items in your Shopping cart</li></a>
 					</ul></div></p>
 			  </div>
 			  <script type="text/javascript">

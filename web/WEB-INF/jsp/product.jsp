@@ -4,6 +4,7 @@
     Author     : user
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="a" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
@@ -56,7 +57,7 @@
         <table class="table table-striped" width="20" >
             
             <tr>
-                
+                <!--th></th-->
                 <th> Nama Produk</th>
                 <th> Harga </th>
                 <th> Stok </th>
@@ -64,6 +65,7 @@
             </tr>
         <a:forEach var="p" items="${prods}">
             <tr>
+                <!--td><img src="<c:url value="resouces/images/${p.pic}"/>"/></td-->
                 <td><a href="${pageContext.request.contextPath}/home/product/${p.productId}">${p.productName}</a> </td>
                 <td>${p.productPrice}</td>
                 <td>${p.available}</td>

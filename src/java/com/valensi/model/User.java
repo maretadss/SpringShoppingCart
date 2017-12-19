@@ -149,4 +149,7 @@ public class User implements Serializable {
         this.lastname = lastname;
     }
 
+    public User() {
+    }
+
 }
